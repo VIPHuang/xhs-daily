@@ -1,0 +1,9 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>小红书发布记录</title><link rel="stylesheet" href="style.css"></head>
+<body><header><h1>小红书发布记录</h1></header><main><div class="f"><button data-s="全部" class="on">全部</button><button data-s="未发布">未发布</button><button data-s="已发布">已发布</button></div><div id="l">加载中…</div></main>
+<script>
+let P=[],F='全部';const e=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function r(){const g={};P.filter(p=>F=='全部'||p.status==F).sort((a,b)=>b.date.localeCompare(a.date)).forEach(p=>(g[p.date]=g[p.date]||[]).push(p));
+const k=Object.keys(g);l.innerHTML=k.length?k.map(d=>'<h2>'+d+'</h2>'+g[d].map(p=>'<a class="c" href="post.html?slug='+encodeURIComponent(p.slug)+'"><span class="t '+(p.status=='已发布'?'p':'u')+'">'+e(p.status)+'</span>'+e(p.title)+'</a>').join('')).join(''):'<p>暂无记录</p>'}
+document.querySelectorAll('.f button').forEach(b=>b.onclick=()=>{F=b.dataset.s;document.querySelectorAll('.f button').forEach(x=>x.classList.toggle('on',x==b));r()});
+fetch('data/posts.json?'+Date.now()).then(x=>x.json()).then(j=>{P=j.posts;r()}).catch(()=>l.textContent='加载失败');
+</script></body></html>
