@@ -21,28 +21,6 @@
       "zip": "package.zip",
       "md": "post.md",
       "short": "post-short.txt"
-    },
-    {
-      "date": "2026-11-03",
-      "title": "一通假移民局电话，留学生转出45万",
-      "slug": "2026-11-03-uk-scam",
-      "status": "未发布",
-      "publishedAt": null,
-      "images": [
-        "01.png",
-        "02.png",
-        "03.png",
-        "04.png",
-        "05.png",
-        "06.png",
-        "07.png",
-        "08.png"
-      ],
-      "overview": "overview.png",
-      "txt": "post.txt",
-      "zip": "package.zip",
-      "md": "post.md",
-      "short": "post-short.txt"
     }
   ]
 }
