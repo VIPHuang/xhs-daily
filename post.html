@@ -6,11 +6,13 @@ const slug=new URLSearchParams(location.search).get('slug');
 fetch('data/posts.json?'+Date.now()).then(x=>x.json()).then(async j=>{const p=j.posts.find(x=>x.slug==slug);if(!p){h.textContent='找不到这篇';return}
 document.title=h.textContent=p.title;const b='posts/'+p.slug+'/',pub=p.status=='已发布',imgs=p.images||[];
 let txt='';try{txt=await (await fetch(b+(p.txt||'post.txt'))).text()}catch(_){txt='（文案加载失败）'}
+let sh='';if(p.short){try{sh=await (await fetch(b+p.short)).text()}catch(_){sh='（短版加载失败）'}}
 let s='<p><span class="t '+(pub?'p':'u')+'">'+e(p.status)+'</span>'+e(p.date)+(pub&&p.publishedAt?' · 已发布于 '+e(p.publishedAt):'')+'</p>';
 s+='<h2>发布版文案</h2><button class="btn" id="cp">一键复制</button><pre id="tx">'+e(txt)+'</pre>';
 s+='<p>'+(p.txt?'<a class="btn" href="'+b+p.txt+'" download>下载 txt</a>':'')+(p.zip?'<a class="btn" href="'+b+p.zip+'" download>下载 zip</a>':'')+'</p>';
+if(p.short)s+='<h2>短版文案（≤500字·4个标签）</h2><button class="btn" id="cp2">复制短版</button><pre id="tx2">'+e(sh)+'</pre><p><a class="btn" href="'+b+p.short+'" download>下载短版 txt</a></p>';
 if(imgs.length){s+='<h2>配图（共 '+imgs.length+' 张，按顺序上传，第 1 张是封面）</h2>'+imgs.map((f,i)=>'<figure><a href="'+b+f+'" target="_blank"><img loading="lazy" src="'+b+f+'" alt="第'+(i+1)+'张"></a><figcaption>第 '+(i+1)+' / '+imgs.length+' 张'+(i==0?'（封面）':'')+' · 点开看大图，手机长按保存</figcaption></figure>').join('')}
 if(p.overview)s+='<h2>总览图</h2><figure><a href="'+b+p.overview+'" target="_blank"><img loading="lazy" src="'+b+p.overview+'" alt="总览"></a></figure>';
-m.innerHTML=s;cp.onclick=()=>{const done=()=>cp.textContent='已复制 ✓';navigator.clipboard?navigator.clipboard.writeText(txt).then(done,f):f();function f(){const r=document.createRange();r.selectNodeContents(tx);getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy');done()}}
+m.innerHTML=s;const bind=(btn,pre,val)=>{btn.onclick=()=>{const done=()=>btn.textContent='已复制 ✓';navigator.clipboard?navigator.clipboard.writeText(val).then(done,f):f();function f(){const r=document.createRange();r.selectNodeContents(pre);getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy');done()}}};bind(cp,tx,txt);if(p.short)bind(cp2,tx2,sh);
 }).catch(()=>h.textContent='加载失败');
 </script></body></html>

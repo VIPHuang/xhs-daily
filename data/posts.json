@@ -19,7 +19,8 @@
       "overview": "overview.png",
       "txt": "post.txt",
       "zip": "package.zip",
-      "md": "post.md"
+      "md": "post.md",
+      "short": "post-short.txt"
     },
     {
       "date": "2026-11-03",
@@ -40,7 +41,8 @@
       "overview": "overview.png",
       "txt": "post.txt",
       "zip": "package.zip",
-      "md": "post.md"
+      "md": "post.md",
+      "short": "post-short.txt"
     }
   ]
 }
