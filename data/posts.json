@@ -375,6 +375,28 @@
       "short": "post-short.txt",
       "zip": "package.zip",
       "md": "post.md"
+    },
+    {
+      "date": "2026-11-08",
+      "title": "网传AI短剧回报超千万，主创出面：别被带跑",
+      "slug": "2026-11-08-ai-shortdrama-hype",
+      "status": "未发布",
+      "publishedAt": null,
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png"
+      ],
+      "overview": "overview.png",
+      "txt": "post.txt",
+      "short": "post-short.txt",
+      "zip": "package.zip",
+      "md": "post.md"
     }
   ]
 }
