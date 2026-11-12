@@ -463,6 +463,28 @@
       "short": "post-short.txt",
       "zip": "package.zip",
       "md": "post.md"
+    },
+    {
+      "date": "2026-11-12",
+      "title": "腾讯辟谣裁员50%，打工人别慌先做这5件事",
+      "slug": "2026-11-12-layoff-rumor-checklist",
+      "status": "未发布",
+      "publishedAt": null,
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png"
+      ],
+      "overview": "overview.png",
+      "txt": "post.txt",
+      "short": "post-short.txt",
+      "zip": "package.zip",
+      "md": "post.md"
     }
   ]
 }
