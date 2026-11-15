@@ -529,6 +529,28 @@
       "short": "post-short.txt",
       "zip": "package.zip",
       "md": "post.md"
+    },
+    {
+      "date": "2026-11-15",
+      "title": "烤红薯闻着香吃着不甜？买前先看这5点",
+      "slug": "2026-11-15-roast-sweet-potato-check",
+      "status": "未发布",
+      "publishedAt": null,
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png"
+      ],
+      "overview": "overview.png",
+      "txt": "post.txt",
+      "short": "post-short.txt",
+      "zip": "package.zip",
+      "md": "post.md"
     }
   ]
 }
