@@ -817,6 +817,28 @@
       "short": "post-short.txt",
       "zip": "package.zip",
       "md": "post.md"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "大额存单20万降到10万起，买前先看这5点",
+      "slug": "2026-11-28-cd-threshold-100k",
+      "status": "未发布",
+      "publishedAt": null,
+      "images": [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.png",
+        "07.png",
+        "08.png"
+      ],
+      "overview": "overview.png",
+      "txt": "post.txt",
+      "short": "post-short.txt",
+      "zip": "package.zip",
+      "md": "post.md"
     }
   ]
 }
